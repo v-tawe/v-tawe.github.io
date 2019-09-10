@@ -1576,6 +1576,9 @@ img {
   background: #dd4b39;
   text-shadow: 0 1px #be3221;
 }
+.gt-container a {
+  border-bottom: none;
+}
 .tocbot {
   position: absolute;
   top: 14rem;
@@ -2339,9 +2342,12 @@ pre .javascript .function {
   content: '\f12a';
 }
 .navbar .nav.nav-main .nav-item:nth-child(3) .nav-item-link::before {
-  content: '\f1a9';
+  content: '\f18c';
 }
 .navbar .nav.nav-main .nav-item:nth-child(4) .nav-item-link::before {
+  content: '\f153';
+}
+.navbar .nav.nav-main .nav-item:nth-child(5) .nav-item-link::before {
   content: '\f174';
 }
 .navbar-bottom {
