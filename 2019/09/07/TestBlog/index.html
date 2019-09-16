@@ -72,13 +72,16 @@
       
 
       
-        <h1 id="My-Test-BLog-Page"><a href="#My-Test-BLog-Page" class="headerlink" title="My Test BLog Page"></a>My Test BLog Page</h1>
+        <h2 id="My-Test-BLog-Page"><a href="#My-Test-BLog-Page" class="headerlink" title="My Test BLog Page"></a>My Test BLog Page</h2><p>this is a test page</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://v-tawe.github.io/2019/09/07/TestBlog/" data-id="ck0e32dwq000238hqaguwuy37"
+      <a data-url="https://v-tawe.github.io/2019/09/07/TestBlog/" data-id="ck0mji76u0002bkhqjjdtfbs2"
          class="article-share-link">Share</a>
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+
     </footer>
 
   </div>
@@ -88,9 +91,9 @@
   <nav class="article-nav">
     
     
-      <a href="/2019/09/07/20190907-myTestBlog/" class="article-nav-link">
+      <a href="/2019/09/07/hello-world/" class="article-nav-link">
         <strong class="article-nav-caption">Olde posts</strong>
-        <div class="article-nav-title">myTestBlog</div>
+        <div class="article-nav-title">Hello World</div>
       </a>
     
   </nav>
@@ -110,14 +113,16 @@
       clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
       repo: 'gitalk',
       owner: 'v-tawe',
-      admin: "['v-tawe']",
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
       // id: location.pathname,      // Ensure uniqueness and length less than 50
       id: md5(location.pathname),
-      labels: "['Gitalk']",
-      perPage: '15',
-      pagerDirection: 'last',
-      createIssueManually: 'true',
-      distractionFreeMode: 'false'
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
     })
 
   gitalk.render('gitalk-container')
@@ -138,14 +143,16 @@
       clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
       repo: 'gitalk',
       owner: 'v-tawe',
-      admin: "['v-tawe']",
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
       // id: location.pathname,      // Ensure uniqueness and length less than 50
       id: md5(location.pathname),
-      labels: "['Gitalk']",
-      perPage: '15',
-      pagerDirection: 'last',
-      createIssueManually: 'true',
-      distractionFreeMode: 'false'
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
     })
 
   gitalk.render('gitalk-container')

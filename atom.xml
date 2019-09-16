@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://v-tawe.github.io/"/>
-  <updated>2019-09-07T15:41:18.236Z</updated>
+  <updated>2019-09-16T15:13:16.175Z</updated>
   <id>https://v-tawe.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://v-tawe.github.io/2019/09/07/TestBlog/"/>
     <id>https://v-tawe.github.io/2019/09/07/TestBlog/</id>
     <published>2019-09-07T15:40:46.000Z</published>
-    <updated>2019-09-07T15:41:18.236Z</updated>
+    <updated>2019-09-16T15:13:16.175Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;My-Test-BLog-Page&quot;&gt;&lt;a href=&quot;#My-Test-BLog-Page&quot; class=&quot;headerlink&quot; title=&quot;My Test BLog Page&quot;&gt;&lt;/a&gt;My Test BLog
+          &lt;h2 id=&quot;My-Test-BLog-Page&quot;&gt;&lt;a href=&quot;#My-Test-BLog-Page&quot; class=&quot;headerlink&quot; title=&quot;My Test BLog Page&quot;&gt;&lt;/a&gt;My Test BLog Page&lt;/h2&gt;&lt;p&gt;this is a
         
       
     
@@ -37,28 +37,7 @@
     
     
     
-  </entry>
-  
-  <entry>
-    <title>myTestBlog</title>
-    <link href="https://v-tawe.github.io/2019/09/07/20190907-myTestBlog/"/>
-    <id>https://v-tawe.github.io/2019/09/07/20190907-myTestBlog/</id>
-    <published>2019-09-07T15:18:19.000Z</published>
-    <updated>2019-09-07T15:18:52.605Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;My-Test-BLog-Page&quot;&gt;&lt;a href=&quot;#My-Test-BLog-Page&quot; class=&quot;headerlink&quot; title=&quot;My Test BLog Page&quot;&gt;&lt;/a&gt;My Test BLog
-        
-      
-    
-    </summary>
-    
-    
+      <category term="test" scheme="https://v-tawe.github.io/tags/test/"/>
     
   </entry>
   
@@ -67,7 +46,7 @@
     <link href="https://v-tawe.github.io/2019/09/07/hello-world/"/>
     <id>https://v-tawe.github.io/2019/09/07/hello-world/</id>
     <published>2019-09-07T07:58:41.588Z</published>
-    <updated>2019-09-10T17:09:38.308Z</updated>
+    <updated>2019-09-16T15:13:44.437Z</updated>
     
     <summary type="html">
     
@@ -76,6 +55,10 @@
     </summary>
     
     
+      <category term="hello" scheme="https://v-tawe.github.io/categories/hello/"/>
+    
+    
+      <category term="hello-world" scheme="https://v-tawe.github.io/tags/hello-world/"/>
     
   </entry>
   
