@@ -61,7 +61,7 @@
       
         
 
-<article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+<article id="post-troubleshooting/fatal-refusing-to-merge-unrelated-histories" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
     
@@ -69,14 +69,10 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/09/07/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/">解决 Git 中  fatal:refusing to merge unrelated histories</a>
     </h2>
   
   
-  <div class="article-topping">
-    <i class="fe fe-umbrella"></i>
-  </div>
-
 
 
 
@@ -86,12 +82,12 @@
 
     
       <div class="article-meta">
-        <a href="/2019/09/07/hello-world/" class="article-date">
-  <time datetime="2019-09-07T07:58:41.588Z" itemprop="datePublished">2019-09-07</time>
+        <a href="/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/" class="article-date">
+  <time datetime="2019-09-16T16:41:02.000Z" itemprop="datePublished">2019-09-17</time>
 </a>
         
   <div class="article-category">
-    <a class="article-category-link" href="/categories/hello/">hello</a>
+    <a class="article-category-link" href="/categories/TroubleShooting/">TroubleShooting</a>
   </div>
 
       </div>
@@ -104,31 +100,19 @@
 
 
       
-  <div class="article-gallery">
-    <div class="article-gallery-photos">
-      
-        
-          <a class="article-gallery-img" href="/2019/09/07/hello-world/" rel="gallery_ck0mji7700004bkhq998evo7a">
-            <img src="https://image.shutterstock.com/z/stock-photo-366044399.jpg" itemprop="image">
-          </a>
-        
-      
-    </div>
-  </div>
-
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-link" href="/2019/09/07/hello-world/">Read More...</a>
-        
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>我们在没有 clone 的情况下，在本地 Init 了一个新的 Git Folder，在进行 push 操作时出现 <code>fatal:refusing to merge unrelated histories</code> 错误。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>这个问题就是因为我们想要将两个不相关的 git history 合并到一起，git 默认是不允许的。<br>我们可以在命令后添加： <code>--allow-unrelated-histories</code> 参数，使 git 不进行该检测。</p>
+<p>例如： master/live 两个 branch 是不想关联的 branch， 我们可以使用以下命令将 master merge 到 live 中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// switched to branch &apos;live&apos;</span><br><span class="line">$ git checkout live</span><br><span class="line">// merge &apos;master&apos; to &apos;live&apos;</span><br><span class="line">$ git merge master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://v-tawe.github.io/2019/09/07/hello-world/" data-id="ck0mji7700004bkhq998evo7a"
+      <a data-url="https://v-tawe.github.io/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/" data-id="ck0mn1hhh0015oohqm4k9m2fp"
          class="article-share-link">Share</a>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-world/">hello-world</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
     </footer>
 
@@ -175,7 +159,7 @@
       
         
 
-<article id="post-TestBlog" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+<article id="post-troubleshooting/register-30-days-expire" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
     
@@ -183,7 +167,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/09/07/TestBlog/">TestBlog</a>
+      <a class="article-title" href="/2019/09/17/troubleshooting/register-30-days-expire/">SmartGit 轻度破解，仅限个人使用</a>
     </h2>
   
   
@@ -196,10 +180,14 @@
 
     
       <div class="article-meta">
-        <a href="/2019/09/07/TestBlog/" class="article-date">
-  <time datetime="2019-09-07T15:40:46.000Z" itemprop="datePublished">2019-09-07</time>
+        <a href="/2019/09/17/troubleshooting/register-30-days-expire/" class="article-date">
+  <time datetime="2019-09-16T16:41:02.000Z" itemprop="datePublished">2019-09-17</time>
 </a>
         
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TroubleShooting/">TroubleShooting</a>
+  </div>
+
       </div>
     
 
@@ -212,15 +200,437 @@
       
 
       
-        <h2 id="My-Test-BLog-Page"><a href="#My-Test-BLog-Page" class="headerlink" title="My Test BLog Page"></a>My Test BLog Page</h2><p>this is a test page</p>
+        <p>SmartGit 个人使用时，可以免费试用 30 天，通过以下方法可以清楚之前 30 天的使用记录，从而达到长期使用的效果。^_^</p>
+<p>smartGit 用于记录使用日期的文件是： <code>%APPDATA%\syntevo\SmartGit\&lt;version_folder&gt;\settings.xml</code> 所以我们只要找到它将他删除即可。</p>
+<p>使用 运行（Windows + R)，输入 <code>%APPDATA%\syntevo\SmartGit\</code> 定位到 SmartGit 目录, 选择相应的版本号（文件夹），在其中找到 settings.xml 将其删除即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://v-tawe.github.io/2019/09/07/TestBlog/" data-id="ck0mji76u0002bkhqjjdtfbs2"
+      <a data-url="https://v-tawe.github.io/2019/09/17/troubleshooting/register-30-days-expire/" data-id="ck0mn1hhs0019oohqxzixaelf"
          class="article-share-link">Share</a>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SmartGit/">SmartGit</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  <!-- 
+    <div id="gitalk-container"></div>
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+   -->
+
+</article>
+
+
+
+      
+        
+
+<article id="post-study-notes/node-js" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/09/17/study-notes/node-js/">Node.js 学习笔记</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/09/17/study-notes/node-js/" class="article-date">
+  <time datetime="2019-09-16T16:25:29.000Z" itemprop="datePublished">2019-09-17</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Notes/">Study Notes</a> / <a class="article-category-link" href="/categories/Study-Notes/Node-js/">Node.js</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p>Node 利用 JavaScript 的函数式编程特性，实现模块的隔离。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; ... &#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>module.exports = &lt;functionName&gt;</code> 将函数暴露出去， 调用处用 <code>require(&#39;&lt;module_name&gt;&#39;)</code> 拿到暴露的函数。</p>
+        
+          <a class="article-more-link" href="/2019/09/17/study-notes/node-js/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://v-tawe.github.io/2019/09/17/study-notes/node-js/" data-id="ck0mmcqqn0000oohqcsa1bjyf"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  <!-- 
+    <div id="gitalk-container"></div>
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+   -->
+
+</article>
+
+
+
+      
+        
+
+<article id="post-study-notes/sql" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/09/17/study-notes/sql/">SQL 学习笔记</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/09/17/study-notes/sql/" class="article-date">
+  <time datetime="2019-09-16T16:20:29.000Z" itemprop="datePublished">2019-09-17</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Notes/">Study Notes</a> / <a class="article-category-link" href="/categories/Study-Notes/SQL/">SQL</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="SQL-简介"><a href="#SQL-简介" class="headerlink" title="SQL 简介"></a>SQL 简介</h2><p>SQL = Structured Query Language</p>
+<p>总的来说，SQL语言定义了这么几种操作数据库的能力：</p>
+<ul>
+<li><p>DDL：Data Definition Language</p>
+<p>  DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。</p>
+</li>
+<li><p>DML：Data Manipulation Language</p>
+<p>  DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。</p>
+</li>
+<li><p>DQL：Data Query Language</p>
+<p>  DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。</p>
+</li>
+</ul>
+        
+          <a class="article-more-link" href="/2019/09/17/study-notes/sql/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://v-tawe.github.io/2019/09/17/study-notes/sql/" data-id="ck0mm9s530008nghq3wlgrgba"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  <!-- 
+    <div id="gitalk-container"></div>
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+   -->
+
+</article>
+
+
+
+      
+        
+
+<article id="post-study-notes/javascript" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/09/16/study-notes/javascript/">JavaScript 学习笔记</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/09/16/study-notes/javascript/" class="article-date">
+  <time datetime="2019-09-16T15:50:29.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Notes/">Study Notes</a> / <a class="article-category-link" href="/categories/Study-Notes/JavaScript/">JavaScript</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="JavaScript-布局"><a href="#JavaScript-布局" class="headerlink" title="JavaScript 布局"></a>JavaScript 布局</h2><ul>
+<li><p>通常 JavaScript 代码可以放到 <code>&lt;head&gt; &lt;/head&gt;</code> 中；</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">            alert(<span class="string">'Hello World'</span>);</span><br><span class="line">        &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>type</code> 默认属性即为：<code>JavaScript</code>, 所以可以不必显示指定。</p>
+</blockquote>
+</li>
+<li><p>将 JavaScript 代码放到单独的 <code>.js</code> 文件中；</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script src=<span class="string">"/static/js/abc.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">    &lt;body&gt;</span></span><br><span class="line"><span class="regexp">        ...</span></span><br><span class="line"><span class="regexp">    &lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+          <a class="article-more-link" href="/2019/09/16/study-notes/javascript/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://v-tawe.github.io/2019/09/16/study-notes/javascript/" data-id="ck0mm9s6f000lnghqnv4ae2pr"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  <!-- 
+    <div id="gitalk-container"></div>
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+   -->
+
+</article>
+
+
+
+      
+        
+
+<article id="post-study-notes/git" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/09/16/study-notes/git/">Git 学习笔记</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/09/16/study-notes/git/" class="article-date">
+  <time datetime="2019-09-16T15:35:04.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Notes/">Study Notes</a> / <a class="article-category-link" href="/categories/Study-Notes/Git/">Git</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <img src="/2019/09/16/study-notes/git/github-git-cheat-sheet-1.png" title="cheat-sheet-1">
+<img src="/2019/09/16/study-notes/git/github-git-cheat-sheet-2.png" title="cheat-sheet-2">
+        
+          <a class="article-more-link" href="/2019/09/16/study-notes/git/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://v-tawe.github.io/2019/09/16/study-notes/git/" data-id="ck0mm9s5f000fnghqilr11jk9"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
     </footer>
 

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    About |
+    SmartGit 轻度破解，仅限个人使用 |
     
     David&#39;s Blog</title>
   
@@ -27,7 +27,7 @@
   <section class="outer">
   
 
-<article id="page-" class="article article-type-page" itemscope itemprop="blogPost" data-scroll-reveal>
+<article id="post-troubleshooting/register-30-days-expire" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
     
@@ -35,7 +35,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      About
+      SmartGit 轻度破解，仅限个人使用
     </h1>
   
   
@@ -47,6 +47,23 @@
     
 
     
+      <div class="article-meta">
+        <a href="/2019/09/17/troubleshooting/register-30-days-expire/" class="article-date">
+  <time datetime="2019-09-16T16:41:02.000Z" itemprop="datePublished">2019-09-17</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TroubleShooting/">TroubleShooting</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+
+
+
 
     
 
@@ -57,22 +74,72 @@
       
 
       
-        <h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>这里总是要写点什么的…</p>
+        <p>SmartGit 个人使用时，可以免费试用 30 天，通过以下方法可以清楚之前 30 天的使用记录，从而达到长期使用的效果。^_^</p>
+<p>smartGit 用于记录使用日期的文件是： <code>%APPDATA%\syntevo\SmartGit\&lt;version_folder&gt;\settings.xml</code> 所以我们只要找到它将他删除即可。</p>
+<p>使用 运行（Windows + R)，输入 <code>%APPDATA%\syntevo\SmartGit\</code> 定位到 SmartGit 目录, 选择相应的版本号（文件夹），在其中找到 settings.xml 将其删除即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://v-tawe.github.io/about/index.html" data-id="ck0mm9s2y0002nghq11zsnas5"
+      <a data-url="https://v-tawe.github.io/2019/09/17/troubleshooting/register-30-days-expire/" data-id="ck0mn1hhs0019oohqxzixaelf"
          class="article-share-link">Share</a>
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SmartGit/">SmartGit</a></li></ul>
+
     </footer>
 
   </div>
 
   
     
+  <nav class="article-nav">
+    
+      <a href="/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            解决 Git 中  fatal:refusing to merge unrelated histories
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/09/17/study-notes/node-js/" class="article-nav-link">
+        <strong class="article-nav-caption">Olde posts</strong>
+        <div class="article-nav-title">Node.js 学习笔记</div>
+      </a>
+    
+  </nav>
+
 
   
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
 
   
 
@@ -130,8 +197,8 @@
 
 </main>
 
-  <aside class="sidebar">
-    
+<aside class="sidebar sidebar-specter">
+  
     <button class="navbar-toggle"></button>
 <nav class="navbar">
   
@@ -200,6 +267,21 @@
   <script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
 
 
 <script src="/js/ocean.js"></script>

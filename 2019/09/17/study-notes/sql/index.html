@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="Java, ASP.NET, C++">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    SQL 学习笔记 |
+    
+    David&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+</html>
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-study-notes/sql" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SQL 学习笔记
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/09/17/study-notes/sql/" class="article-date">
+  <time datetime="2019-09-16T16:20:29.000Z" itemprop="datePublished">2019-09-17</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Notes/">Study Notes</a> / <a class="article-category-link" href="/categories/Study-Notes/SQL/">SQL</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="SQL-简介"><a href="#SQL-简介" class="headerlink" title="SQL 简介"></a>SQL 简介</h2><p>SQL = Structured Query Language</p>
+<p>总的来说，SQL语言定义了这么几种操作数据库的能力：</p>
+<ul>
+<li><p>DDL：Data Definition Language</p>
+<p>  DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。</p>
+</li>
+<li><p>DML：Data Manipulation Language</p>
+<p>  DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。</p>
+</li>
+<li><p>DQL：Data Query Language</p>
+<p>  DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="数据库类别"><a href="#数据库类别" class="headerlink" title="数据库类别"></a>数据库类别</h2><ul>
+<li>关系型数据库(SQL)</li>
+<li>非关系型数据库(NoSQL) - MongoDB, Cassandra, Dynamo</li>
+</ul>
+<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><h3 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h3><p>主键是关系表中记录的唯一标识。选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;student&gt;</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> &lt;pk_id&gt;</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (&lt;<span class="keyword">id</span>&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>外键是用来关联 2 个表结构的，表直接的约束分为以下 3 种：</p>
+<ol>
+<li>一对一</li>
+<li>一对多 - 外键建立在‘多’的表中(即从表)</li>
+<li>多对多 - 需要建立中间表</li>
+</ol>
+<ul>
+<li><p>创建外键</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;student&gt;</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> &lt;fk_class_id&gt;</span><br><span class="line"><span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (&lt;class_id&gt;)</span><br><span class="line"><span class="keyword">REFERENCES</span> classes (&lt;<span class="keyword">id</span>&gt;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除外键</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;students&gt;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> &lt;fk_class_id&gt;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;students&gt;</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">INDEX</span> &lt;idx_name_score&gt; (&lt;<span class="keyword">name</span>&gt;, &lt;score&gt;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>唯一索引</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;students&gt;</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">UNIQUE</span> <span class="keyword">INDEX</span> &lt;uni_name&gt; (&lt;<span class="keyword">name</span>&gt;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><p>根据业务要求，像身份号、手机号、邮箱地址等，它们具有业务含义不易作为主键，但是又具有唯一性：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个唯一约束。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;students&gt;</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> &lt;uni_name&gt;</span><br><span class="line"><span class="keyword">UNIQUE</span> (&lt;<span class="keyword">name</span>&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="SQL-查询"><a href="#SQL-查询" class="headerlink" title="SQL 查询"></a>SQL 查询</h3><p>不带 <code>FROM</code> 子句的 <code>SELECT</code> 语句有一个有用的用途，就是用来判断当前到数据库的连接是否有效。许多检测工具会执行一条 <code>SELECT 1;</code> 来测试数据库连接。</p>
+<ol>
+<li><p>基本查询 - <code>SELECT * FROM &lt;students&gt;</code></p>
+</li>
+<li><p>条件查询 - <code>SELECT * FROM &lt;students&gt; WHERE id = 1</code></p>
+</li>
+<li><p>投影查询 - <code>SELECT id, name FROM &lt;students&gt;</code></p>
+</li>
+<li><p>排序 - <code>SELECT * FROM &lt;students&gt; ORDER BY id DESC</code><br> NOTE: <code>OREDER BY</code> 要在 <code>WHERE</code> 条件后</p>
+</li>
+<li><p>分页查询 - <code>SELECT * FROM &lt;students&gt; LIMIT &lt;10&gt; OFFSET &lt;0&gt;</code><br> <code>pageSize</code> - <code>LIMIT</code><br> <code>pageIndex</code> - <code>OFFSET</code>=<code>pageSize * (pageIndex - 1)</code>, <code>pageIndex</code> 从 <code>1</code> 开始，而 <code>OFFSET</code> 从 <code>0</code> 开始。</p>
+</li>
+<li><p>聚合查询<br> 聚合函数：<code>COUNT(), SUM(), AVG(), MAX(), MIN()</code><br> 通过 <code>GROUP BY</code> 进行分组<br> <code>SELECT &lt;class_id&gt;, &lt;gender&gt;, COUNT(*) num FROM &lt;students&gt; GROUP BY &lt;class_id&gt;, &lt;gender&gt;;</code></p>
+</li>
+<li><p>多表查询 - <code>SELECT * FROM &lt;students&gt;, &lt;classes&gt;;</code> 获得的集合为 A 表行数 * B 表行数</p>
+</li>
+<li><p>连接查询</p>
+<ul>
+<li><p>内连接(INNER JOIN)</p>
+</li>
+<li><p>外连接(OUTER JOIN)</p>
+<ul>
+<li>左连接(LEFT OUTER JOIN)</li>
+<li>右连接(RIGHT OUTER JOIN)</li>
+<li>全连接(FULL OUTER JOIN)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">INNER JOIN</th>
+<th align="center">LEFT OUTER JOIN</th>
+<th align="center">RIGHT OUTER JOIN</th>
+<th align="center">FULL OUTER JOIN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">两张表都存在的记录</td>
+<td align="center">左表存在的记录</td>
+<td align="center">右表存在的记录</td>
+<td align="center">左右表都存在的记录</td>
+</tr>
+<tr>
+<td align="center"><img src="/2019/09/17/study-notes/sql/INNER_JOIN.png" title="INNER_JOIN"></td>
+<td align="center"><img src="/2019/09/17/study-notes/sql/LEFT_OUTER_JOIN.png" title="LEFT_OUTER_JOIN"></td>
+<td align="center"><img src="/2019/09/17/study-notes/sql/RIGHT_OUTER_JOIN.png" title="RIGHT_OUTER_JOIN"></td>
+<td align="center"><img src="/2019/09/17/study-notes/sql/FULL_OUTER_JOIN.png" title="FULL_OUTER_JOIN"></td>
+</tr>
+</tbody></table>
+<!--    | ![](INNER_JOIN.png) | ![](LEFT_OUTER_JOIN.png) | ![](RIGHT_OUTER_JOIN.png) | ![](FULL_OUTER_JOIN.png) | -->
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="SQL-修改"><a href="#SQL-修改" class="headerlink" title="SQL 修改"></a>SQL 修改</h3><p>关系数据库的基本操作就是增删改查，即 <code>CRUD：Create、Retrieve、Update、Delete</code>。</p>
+<p>对于增、删、改，对应的SQL语句分别是：</p>
+<ul>
+<li><code>INSERT</code>：插入新记录 - <code>INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);</code></li>
+<li><code>UPDATE</code>：更新已有记录 - <code>UPDATE &lt;表名&gt; SET 字段1=值1, 字段2=值2, ... WHERE ...;</code></li>
+<li><code>DELETE</code>：删除已有记录 - <code>DELETE FROM &lt;表名&gt; WHERE ...;</code></li>
+</ul>
+<h2 id="常用-SQL-语句"><a href="#常用-SQL-语句" class="headerlink" title="常用 SQL 语句"></a>常用 SQL 语句</h2><h3 id="数据库-表操作-SQL-语句"><a href="#数据库-表操作-SQL-语句" class="headerlink" title="数据库 + 表操作 SQL 语句"></a>数据库 + 表操作 SQL 语句</h3><table>
+<thead>
+<tr>
+<th>SQL 语句</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SHOW DATABASES</td>
+<td>列出所有数据库</td>
+</tr>
+<tr>
+<td>CREATE DATABASE <database_name></database_name></td>
+<td>创建数据库</td>
+</tr>
+<tr>
+<td>DROP DATABASE <database_name></database_name></td>
+<td>删除数据库</td>
+</tr>
+<tr>
+<td>USE <database_name></database_name></td>
+<td>切换当前数据库</td>
+</tr>
+<tr>
+<td>SHOW TABLES</td>
+<td>列出所有表</td>
+</tr>
+<tr>
+<td>DESC <table_name></table_name></td>
+<td>查看表结构</td>
+</tr>
+<tr>
+<td>SHOW CREATE TABLE <table_name></table_name></td>
+<td>查看创建表的 SQL 语句</td>
+</tr>
+<tr>
+<td>DROP TABLE <table_name></table_name></td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>ALTER TABLE <table_name> ADD COLUMN <column_name> VARCHAR(10) NOT NULL</column_name></table_name></td>
+<td>新增列</td>
+</tr>
+<tr>
+<td>ALTER TABLE <table_name> CHANGE COLUMN <column_name> VARCHAR(20) NOT NULL</column_name></table_name></td>
+<td>修改列属性</td>
+</tr>
+<tr>
+<td>ALTER TABLE <table_name> DROP COLUMN <column_name></column_name></table_name></td>
+<td>删除列</td>
+</tr>
+<tr>
+<td>EXIT</td>
+<td>退出 MYSQL 连接</td>
+</tr>
+</tbody></table>
+<h3 id="实用-SQL-语句"><a href="#实用-SQL-语句" class="headerlink" title="实用 SQL 语句"></a>实用 SQL 语句</h3><ul>
+<li>插入或替换<br>  <code>REPLACE INTO &lt;students&gt; (&lt;id&gt;, &lt;class_id&gt;, &lt;...&gt;) VALUES(&lt;1&gt;, &lt;1&gt;, &lt;...&gt;)</code><br>  若 <code>id=1</code> 记录不存在，插入新纪录； 若 <code>id=1</code> 记录存在，当前 <code>id=1</code> 记录被删除，然后再插入新纪录。</li>
+<li>插入或更新<br>  <code>INSERT INTO &lt;students&gt; (&lt;id&gt;, &lt;class_id&gt;, &lt;name&gt;, &lt;...&gt;) VALUES(&lt;1&gt;, &lt;1&gt;, &lt;&#39;xiao_min&#39;&gt;, &lt;...&gt;) ON DUPLICATE KEY UPDATE &lt;name&gt;=&lt;&#39;xiao_min&#39;&gt;, &lt;...&gt;;</code><br>  若 <code>id=1</code> 记录不存在，插入新纪录； 若 <code>id=1</code> 记录存在，当前 <code>id=1</code> 记录被更新，更新字段有 <code>UPDATE</code> 指定。</li>
+<li>插入或忽略<br>  <code>INSERT IGNORE INTO &lt;students&gt; (&lt;id&gt;, &lt;class_id&gt;, &lt;...&gt;) VALUES(&lt;1&gt;, &lt;1&gt;, &lt;...&gt;);</code><br>  若 <code>id=1</code>记录不存在，<code>INSERT</code> 语句将插入新记录，否则，不执行任何操作。</li>
+<li>快照<br>  <code>CREATE TABLE &lt;students_of_class1&gt; SELECT * FROM &lt;students&gt; WHERE &lt;class_id&gt;=&lt;1&gt;;</code><br>  通过查询集合创建新表</li>
+</ul>
+<h2 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h2><p>多条语句作为一个整体进行操作的功能，被称为数据库事务。数据库事务可以确保该事务范围内的所有操作都可以全部成功或者全部失败。如果事务失败，那么效果就和没有执行这些 SQL 一样，不会对数据库数据有任何改动。</p>
+<ul>
+<li><code>BEGIN</code> 开启一个事务</li>
+<li><code>COMMIT</code> 提交一个事务</li>
+<li><code>ROLLBACK</code> 回滚事务</li>
+</ul>
+<h3 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h3><ul>
+<li><strong>脏读 DIRTY READ</strong>： 查询同一记录，2 次结果<strong>不一样</strong>，读到还未 commit 的数据结果；</li>
+<li><strong>不可重复读 NON REPEATABLE READ</strong>： 查询同一记录，2 次结果<strong>不一样</strong>，读到的结果在另一事务 commit/rollback 之间；</li>
+<li><strong>幻读 PHANTOM READ</strong>：查询同一记录，2 次结果是<strong>一样</strong>，但是会出现 事务 A 新增的列，事务 B 读不到(<code>SELECT</code>)，但是却可以更新(<code>UPDATE</code>)，更新后才可以读到。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">ISOLATION LEVEL</th>
+<th align="center">DIRTY READ</th>
+<th align="center">NON REPEATABLE READ</th>
+<th align="center">PHANTOM READ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">READ UNCOMMITTED</td>
+<td align="center">YES</td>
+<td align="center">YES</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td align="center">READ COMMITTED</td>
+<td align="center">-</td>
+<td align="center">YES</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td align="center">Repeatable Read</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td align="center">Serializable</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<p><strong>Serializable</strong> 虽然隔离级别最高，但是效率会大大下降。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://v-tawe.github.io/2019/09/17/study-notes/sql/" data-id="ck0mm9s530008nghq3wlgrgba"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/09/17/study-notes/node-js/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            Node.js 学习笔记
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/09/16/study-notes/javascript/" class="article-nav-link">
+        <strong class="article-nav-caption">Olde posts</strong>
+        <div class="article-nav-title">JavaScript 学习笔记</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+  <!-- 
+    <div id="gitalk-container"></div>
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '6ebde0f637818be095cd',
+      clientSecret: 'cbe68a3c54887cd97f7357cfdc5b861be6ce3b2b',
+      repo: 'gitalk',
+      owner: 'v-tawe',
+      //admin: "v-tawe",
+      admin: ['v-tawe'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      //labels: "",
+      //perPage: '',
+      //pagerDirection: '',
+      //createIssueManually: '',
+      //distractionFreeMode: ''
+      distractionFreeMode: false
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+   -->
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 David&#39;s Blog</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="David&#39;s Blog"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://v-tawe.github.io/"/>
-  <updated>2019-09-16T15:13:16.175Z</updated>
+  <updated>2019-09-16T16:47:18.476Z</updated>
   <id>https://v-tawe.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>TestBlog</title>
-    <link href="https://v-tawe.github.io/2019/09/07/TestBlog/"/>
-    <id>https://v-tawe.github.io/2019/09/07/TestBlog/</id>
-    <published>2019-09-07T15:40:46.000Z</published>
-    <updated>2019-09-16T15:13:16.175Z</updated>
+    <title>解决 Git 中  fatal:refusing to merge unrelated histories</title>
+    <link href="https://v-tawe.github.io/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/"/>
+    <id>https://v-tawe.github.io/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/</id>
+    <published>2019-09-16T16:41:02.000Z</published>
+    <updated>2019-09-16T16:47:18.476Z</updated>
     
     <summary type="html">
     
@@ -29,36 +29,167 @@
       
         
         
-          &lt;h2 id=&quot;My-Test-BLog-Page&quot;&gt;&lt;a href=&quot;#My-Test-BLog-Page&quot; class=&quot;headerlink&quot; title=&quot;My Test BLog Page&quot;&gt;&lt;/a&gt;My Test BLog Page&lt;/h2&gt;&lt;p&gt;this is a
+          &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;我们在没有 clone 的情况下，在本地 Init 了一个新的 Git Folder，在进行 push 操作时出现
         
       
     
     </summary>
     
     
+      <category term="TroubleShooting" scheme="https://v-tawe.github.io/categories/TroubleShooting/"/>
     
-      <category term="test" scheme="https://v-tawe.github.io/tags/test/"/>
+    
+      <category term="Git" scheme="https://v-tawe.github.io/tags/Git/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://v-tawe.github.io/2019/09/07/hello-world/"/>
-    <id>https://v-tawe.github.io/2019/09/07/hello-world/</id>
-    <published>2019-09-07T07:58:41.588Z</published>
-    <updated>2019-09-16T15:13:44.437Z</updated>
+    <title>SmartGit 轻度破解，仅限个人使用</title>
+    <link href="https://v-tawe.github.io/2019/09/17/troubleshooting/register-30-days-expire/"/>
+    <id>https://v-tawe.github.io/2019/09/17/troubleshooting/register-30-days-expire/</id>
+    <published>2019-09-16T16:41:02.000Z</published>
+    <updated>2019-09-16T16:45:10.718Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      
+      
+        
+        
+          &lt;p&gt;SmartGit 个人使用时，可以免费试用 30 天，通过以下方法可以清楚之前 30 天的使用记录，从而达到长期使用的效果。^_^&lt;/p&gt;
+&lt;p&gt;smartGit 用于记录使用日期的文件是：
+        
+      
     
     </summary>
     
     
-      <category term="hello" scheme="https://v-tawe.github.io/categories/hello/"/>
+      <category term="TroubleShooting" scheme="https://v-tawe.github.io/categories/TroubleShooting/"/>
     
     
-      <category term="hello-world" scheme="https://v-tawe.github.io/tags/hello-world/"/>
+      <category term="Git" scheme="https://v-tawe.github.io/tags/Git/"/>
+    
+      <category term="SmartGit" scheme="https://v-tawe.github.io/tags/SmartGit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js 学习笔记</title>
+    <link href="https://v-tawe.github.io/2019/09/17/study-notes/node-js/"/>
+    <id>https://v-tawe.github.io/2019/09/17/study-notes/node-js/</id>
+    <published>2019-09-16T16:25:29.000Z</published>
+    <updated>2019-09-16T16:33:50.844Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;模块化&quot;&gt;&lt;a href=&quot;#模块化&quot; class=&quot;headerlink&quot; title=&quot;模块化&quot;&gt;&lt;/a&gt;模块化&lt;/h2&gt;&lt;p&gt;Node 利用 JavaScript 的函数式编程特性，实现模块的隔离。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; ... &amp;#125;)();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;使用 &lt;code&gt;module.exports = &amp;lt;functionName&amp;gt;&lt;/code&gt; 将函数暴露出去， 调用处用 &lt;code&gt;require(&amp;#39;&amp;lt;module_name&amp;gt;&amp;#39;)&lt;/code&gt; 拿到暴露的函数。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Study Notes" scheme="https://v-tawe.github.io/categories/Study-Notes/"/>
+    
+      <category term="Node.js" scheme="https://v-tawe.github.io/categories/Study-Notes/Node-js/"/>
+    
+    
+      <category term="Node.js" scheme="https://v-tawe.github.io/tags/Node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL 学习笔记</title>
+    <link href="https://v-tawe.github.io/2019/09/17/study-notes/sql/"/>
+    <id>https://v-tawe.github.io/2019/09/17/study-notes/sql/</id>
+    <published>2019-09-16T16:20:29.000Z</published>
+    <updated>2019-09-16T16:34:39.843Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;SQL-简介&quot;&gt;&lt;a href=&quot;#SQL-简介&quot; class=&quot;headerlink&quot; title=&quot;SQL 简介&quot;&gt;&lt;/a&gt;SQL 简介&lt;/h2&gt;&lt;p&gt;SQL = Structured Query Language&lt;/p&gt;
+&lt;p&gt;总的来说，SQL语言定义了这么几种操作数据库的能力：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;DDL：Data Definition Language&lt;/p&gt;
+&lt;p&gt;  DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DML：Data Manipulation Language&lt;/p&gt;
+&lt;p&gt;  DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DQL：Data Query Language&lt;/p&gt;
+&lt;p&gt;  DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Study Notes" scheme="https://v-tawe.github.io/categories/Study-Notes/"/>
+    
+      <category term="SQL" scheme="https://v-tawe.github.io/categories/Study-Notes/SQL/"/>
+    
+    
+      <category term="SQL" scheme="https://v-tawe.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 学习笔记</title>
+    <link href="https://v-tawe.github.io/2019/09/16/study-notes/javascript/"/>
+    <id>https://v-tawe.github.io/2019/09/16/study-notes/javascript/</id>
+    <published>2019-09-16T15:50:29.000Z</published>
+    <updated>2019-09-16T16:10:26.468Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JavaScript-布局&quot;&gt;&lt;a href=&quot;#JavaScript-布局&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 布局&quot;&gt;&lt;/a&gt;JavaScript 布局&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;通常 JavaScript 代码可以放到 &lt;code&gt;&amp;lt;head&amp;gt; &amp;lt;/head&amp;gt;&lt;/code&gt; 中；&lt;/p&gt;
+  &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;script type=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            alert(&lt;span class=&quot;string&quot;&gt;&#39;Hello World&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;    &amp;lt;/&lt;/span&gt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;&lt;span class=&quot;regexp&quot;&gt;/body&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;&amp;lt;/&lt;/span&gt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;type&lt;/code&gt; 默认属性即为：&lt;code&gt;JavaScript&lt;/code&gt;, 所以可以不必显示指定。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将 JavaScript 代码放到单独的 &lt;code&gt;.js&lt;/code&gt; 文件中；&lt;/p&gt;
+  &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&quot;/static/js/abc.js&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;&lt;span class=&quot;regexp&quot;&gt;/head&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;    &amp;lt;body&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;        ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;    &amp;lt;/&lt;/span&gt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Study Notes" scheme="https://v-tawe.github.io/categories/Study-Notes/"/>
+    
+      <category term="JavaScript" scheme="https://v-tawe.github.io/categories/Study-Notes/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://v-tawe.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 学习笔记</title>
+    <link href="https://v-tawe.github.io/2019/09/16/study-notes/git/"/>
+    <id>https://v-tawe.github.io/2019/09/16/study-notes/git/</id>
+    <published>2019-09-16T15:35:04.000Z</published>
+    <updated>2019-09-16T16:48:32.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/2019/09/16/study-notes/git/github-git-cheat-sheet-1.png&quot; title=&quot;cheat-sheet-1&quot;&gt;
+&lt;img src=&quot;/2019/09/16/study-notes/git/github-git-cheat-sheet-2.png&quot; title=&quot;cheat-sheet-2&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="Study Notes" scheme="https://v-tawe.github.io/categories/Study-Notes/"/>
+    
+      <category term="Git" scheme="https://v-tawe.github.io/categories/Study-Notes/Git/"/>
+    
+    
+      <category term="Git" scheme="https://v-tawe.github.io/tags/Git/"/>
     
   </entry>
   
