@@ -30,6 +30,31 @@
   
   
   <entry>
+    <title>解决 Git 中  fatal:refusing to merge unrelated histories</title>
+    <link href="/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/"/>
+    <url>/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/</url>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>我们在没有 clone 的情况下，在本地 Init 了一个新的 Git Folder，在进行 push 操作时出现 <code>fatal:refusing to merge unrelated histories</code> 错误。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>这个问题就是因为我们想要将两个不相关的 git history 合并到一起，git 默认是不允许的。<br>我们可以在命令后添加： <code>--allow-unrelated-histories</code> 参数，使 git 不进行该检测。</p><p>例如： master/live 两个 branch 是不想关联的 branch， 我们可以使用以下命令将 master merge 到 live 中：</p><pre><code class="hljs git">&#x2F;&#x2F; switched to branch &#39;live&#39;$ git checkout live&#x2F;&#x2F; merge &#39;master&#39; to &#39;live&#39;$ git merge master --allow-unrelated-histories</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>TroubleShooting</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SmartGit 轻度破解，仅限个人使用</title>
     <link href="/2019/09/17/troubleshooting/register-30-days-expire/"/>
     <url>/2019/09/17/troubleshooting/register-30-days-expire/</url>
@@ -49,31 +74,6 @@
       <tag>Git</tag>
       
       <tag>SmartGit</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>解决 Git 中  fatal:refusing to merge unrelated histories</title>
-    <link href="/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/"/>
-    <url>/2019/09/17/troubleshooting/fatal-refusing-to-merge-unrelated-histories/</url>
-    
-    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>我们在没有 clone 的情况下，在本地 Init 了一个新的 Git Folder，在进行 push 操作时出现 <code>fatal:refusing to merge unrelated histories</code> 错误。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>这个问题就是因为我们想要将两个不相关的 git history 合并到一起，git 默认是不允许的。<br>我们可以在命令后添加： <code>--allow-unrelated-histories</code> 参数，使 git 不进行该检测。</p><p>例如： master/live 两个 branch 是不想关联的 branch， 我们可以使用以下命令将 master merge 到 live 中：</p><pre><code class="hljs git">&#x2F;&#x2F; switched to branch &#39;live&#39;$ git checkout live&#x2F;&#x2F; merge &#39;master&#39; to &#39;live&#39;$ git merge master --allow-unrelated-histories</code></pre>]]></content>
-    
-    
-    <categories>
-      
-      <category>TroubleShooting</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Git</tag>
       
     </tags>
     
