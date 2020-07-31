@@ -1,0 +1,1 @@
+"use strict";var s="Hello";function greet(e){console.log(s+", "+e+"!")}module.exports=greet;

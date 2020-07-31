@@ -1,0 +1,1 @@
+"use strict";try{var fs=require("fs"),statSync=fs.statSync("sample.txt");console.log(JSON.stringify(statSync))}catch(t){console.log(t)}

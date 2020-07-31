@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="description" content=""><meta name="author" content="David"><meta name="keywords" content=""><title>JavaScript 学习笔记 - David&#39;s Blog</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="/lib/hint/hint.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/ocean.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><script src="/js/utils.js"></script><meta name="generator" content="Hexo 5.0.0"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>我的小站</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/default.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2019-09-16 23:50">2019年9月16日 晚上</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 4.1k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 124 分钟 </span><span id="busuanzi_container_page_pv" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span> 次</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><h2 id="JavaScript-布局"><a href="#JavaScript-布局" class="headerlink" title="JavaScript 布局"></a>JavaScript 布局</h2><ul><li><p>通常 JavaScript 代码可以放到 <code>&lt;head&gt; &lt;/head&gt;</code> 中；</p><div class="hljs"><pre><code class="hljs javascript">&lt;html&gt;
+  &lt;head&gt;
+      &lt;script type=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;
+          alert(<span class="hljs-string">&#x27;Hello World&#x27;</span>);
+      &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      ...
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div><blockquote><p><code>type</code> 默认属性即为：<code>JavaScript</code>, 所以可以不必显示指定。</p></blockquote></li><li><p>将 JavaScript 代码放到单独的 <code>.js</code> 文件中；</p><div class="hljs"><pre><code class="hljs javascript">&lt;html&gt;
+  &lt;head&gt;
+      &lt;script src=<span class="hljs-string">&quot;/static/js/abc.js&quot;</span>&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      ...
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div><a id="more"></a><h2 id="JavaScript-基础"><a href="#JavaScript-基础" class="headerlink" title="JavaScript 基础"></a>JavaScript 基础</h2></li></ul><h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p><code>==</code> ： 自动转换数据类型在比较；<br><code>===</code> ： 如果数据类型不一致，返回 <code>false</code>；</p><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>使用 `xxxxxxx` 标识多行字符串：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello</span>
+<span class="hljs-string">World</span>
+<span class="hljs-string">!`</span>);</code></pre></div><p>可以用 <code>&#123;$variable&#125;</code> 替换字符串中的变量：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&#x27;Bob&#x27;</span>;
+<span class="hljs-keyword">var</span> age = <span class="hljs-number">20</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello, <span class="hljs-subst">$&#123;name&#125;</span>, you are <span class="hljs-subst">$&#123;age&#125;</span> years old!`</span>);</code></pre></div><p>对字符串的操作本身不会改变自身，而是返回一个新的字符串；</p><p><code>str.toUpperCase()</code> - 转变为大写<br><code>str.toLowerCase()</code> - 转变为小写<br><code>str.indexOf(&#39;string&#39;)</code> - 获取指定字符串出现的位置<br><code>str.substring(startIndex, length)</code> - 获取截取的字符串</p><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>通过索引进行赋值可以直接修改这个 Array：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>];
+arr[<span class="hljs-number">1</span>] = <span class="hljs-number">100</span>;
+arr; <span class="hljs-comment">//arr now is [&#x27;A&#x27;, 100, &#x27;C&#x27;];</span></code></pre></div><p><code>indexOf(value)</code> - 搜索指定值的索引；<br><code>slice(startIndex, length)</code> - 类似于 String 的 <code>substring()</code>；<br><code>push(&#39;value1&#39;, &#39;value2&#39;)</code> - 末尾添加值；<br><code>pop()</code> - 删除最有一个值；<br><code>sort()</code> - 排序；<br><code>reverse()</code> - 反转数组；<br><code>splice(startIndex, deleteNum, replaceValue1, replaceValue2)</code> - 从指定的索引开始删除若干值，然后再从该位置添加若干值；<br><code>concat(newArray)</code> - 连接两个 Array;<br><code>join(connectValue)</code> - 每个值用指定的字符串连接，返回一个连接后的字符串</p><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>JavaScript 对象是动态类型，可以添加或删除属性;</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = &#123;
+    name: <span class="hljs-string">&#x27;David&#x27;</span>,
+    age: <span class="hljs-string">&#x27;20&#x27;</span>,
+&#125;;
+
+person.gender = <span class="hljs-string">&#x27;male&#x27;</span>; <span class="hljs-comment">// 新增 gender 属性</span>
+<span class="hljs-keyword">delete</span> person.age; <span class="hljs-comment">// 删除 age 属性</span></code></pre></div><p>使用 <code>in</code>/<code>hasOwnProperty()</code> 检测是否拥有某属性：</p><p><code>in</code> - 包括继承的属性, 例如： <code>toString</code> 是 <code>object</code> 对象的属性，结果也是 <code>true</code>;<br><code>hasOwnProperty()</code> - 必须是自身拥有的属性</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-string">&#x27;age&#x27;</span> <span class="hljs-keyword">in</span> person; <span class="hljs-comment">//true</span>
+<span class="hljs-string">&#x27;birth&#x27;</span> <span class="hljs-keyword">in</span> person; <span class="hljs-comment">//false</span>
+person.hasOwnProperty(<span class="hljs-string">&#x27;age&#x27;</span>); <span class="hljs-comment">//true</span>
+person.hasOwnProperty(<span class="hljs-string">&#x27;toString&#x27;</span>); <span class="hljs-comment">//true</span></code></pre></div><h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ul><li><code>for(i=index; i&lt;length; i++)</code>;</li><li><code>for (var key in object)</code>;</li><li><code>while(condition)</code>;</li><li><code>do &#123;...&#125; while(condition)</code>;</li></ul><h3 id="Map-amp-Set"><a href="#Map-amp-Set" class="headerlink" title="Map &amp; Set"></a>Map &amp; Set</h3><p><code>Map</code> - 键值对集合；</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> m = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-string">&#x27;David&#x27;</span>, <span class="hljs-number">100</span>], [<span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-number">10</span>]]);
+m.get(<span class="hljs-string">&#x27;David&#x27;</span>); <span class="hljs-comment">//100</span>
+m.set(<span class="hljs-string">&#x27;Adam&#x27;</span>, <span class="hljs-number">99</span>); <span class="hljs-comment">//添加新的 key-value</span>
+m.has(<span class="hljs-string">&#x27;Bob&#x27;</span>); <span class="hljs-comment">//true</span>
+m.delete(<span class="hljs-string">&#x27;Adam&#x27;</span>) <span class="hljs-comment">//删除 key-&#x27;Adam&#x27;</span></code></pre></div><p><code>Set</code> - Key 的集合，Key 不能重复，没有索引；</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;3&#x27;</span>]);
+s.add(<span class="hljs-number">4</span>); <span class="hljs-comment">// Set &#123;1, 2, 3, &#x27;3&#x27;, 4&#125;</span>
+s.delete(<span class="hljs-number">3</span>); <span class="hljs-comment">// Set &#123;1, 2, &#x27;3&#x27;, 4&#125;</span></code></pre></div><h3 id="iterable"><a href="#iterable" class="headerlink" title="iterable"></a>iterable</h3><p>新的 <code>iterable</code> 类型，<code>Array</code>、<code>Map</code> 和 <code>Set</code> 都属于 <code>iterable</code> 类型。</p><p><code>for ... of</code> 循环 解决 <code>for ... in</code> 循环的历史遗留问题:</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = [<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>];
+a.name = <span class="hljs-string">&#x27;David&#x27;</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> a) &#123;
+    <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// &#x27;0&#x27;, &#x27;1&#x27;, &#x27;2&#x27;, &#x27;name&#x27;</span>
+&#125;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">of</span> a) &#123;
+    <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// &#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;</span>
+&#125;
+
+a.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">element, index, array</span>) </span>&#123;
+    <span class="hljs-comment">// element: 指向当前元素的值；</span>
+    <span class="hljs-comment">// index：指向当前索引；</span>
+    <span class="hljs-comment">// array：指向 Array 对象本身</span>
+&#125;)</code></pre></div><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>2 种定义方法：</p><ul><li><code>function abs(x) &#123; ... &#125;</code></li><li><code>var abs = function(x) &#123; ... &#125;;</code></li></ul><p>参数：</p><ul><li><code>arguments</code> - 用于函数内部，指向传入的所有参数</li><li><code>...rest</code> - 指向传入的未显示指定的参数 <code>function foo(a, b, ...rest)&#123; ... &#125;</code></li></ul><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>JavaScript 默认有一个全局对象 <code>window</code>，任何全局变量（函数也视为变量）都会绑定到 <code>window</code> 上。</p><p><code>var</code> - 定义<strong>局部</strong>作用域变量<br><code>let</code> - 定于<strong>块</strong>级作用域变量</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">100</span>; i++) &#123;
+        <span class="hljs-comment">//</span>
+    &#125;
+    i += <span class="hljs-number">100</span>; <span class="hljs-comment">// SyntaxError;</span>
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">100</span>; i++) &#123;
+        <span class="hljs-comment">//</span>
+    &#125;
+    i += <span class="hljs-number">100</span>; <span class="hljs-comment">// 仍然可以引用变量i</span>
+&#125;</code></pre></div><p><code>const</code> - 常量</p><h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>可以同时赋值多个变量，包括嵌套的数组：</p><p><code>let [x, [y, z]] = [&#39;hello&#39;, [&#39;hi&#39;, &#39;welcome&#39;]];</code></p><p>对象赋值：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = &#123;
+    name: <span class="hljs-string">&#x27;David&#x27;</span>,
+    age: <span class="hljs-number">20</span>,
+    gender: <span class="hljs-string">&#x27;male&#x27;</span>,
+    passport: <span class="hljs-string">&#x27;G-12345678&#x27;</span>,
+    address: &#123;
+        city: <span class="hljs-string">&#x27;Beijing&#x27;</span>,
+        zipcode: <span class="hljs-string">&#x27;100001&#x27;</span>
+    &#125;
+&#125;;
+<span class="hljs-keyword">var</span> &#123;name, <span class="hljs-attr">address</span>: &#123;city, zip&#125;&#125; = person;
+name; <span class="hljs-comment">// &#x27;David&#x27;</span>
+city; <span class="hljs-comment">// &#x27;Beijing&#x27;</span>
+zip; <span class="hljs-comment">// undefined, 因为属性名是zipcode而不是zip</span>
+<span class="hljs-comment">// 注意: address不是变量，而是为了让city和zip获得嵌套的address对象的属性:</span>
+address; <span class="hljs-comment">// Uncaught ReferenceError: address is not defined</span></code></pre></div><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p>可以将函数作为参数传入：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y, abs</span>) </span>&#123;
+    <span class="hljs-keyword">return</span> abs(x) + abs(y);
+&#125;</code></pre></div><h3 id="map-方法"><a href="#map-方法" class="headerlink" title="map 方法"></a>map 方法</h3><p><code>arr.map(function (x) &#123; return abs(x); &#125; )</code> - 依次对数组的每个元素调用指定的函数：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pow</span>(<span class="hljs-params">x</span>) </span>&#123;
+    <span class="hljs-keyword">return</span> x * x;
+&#125;
+<span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+arr.map(pow); <span class="hljs-comment">// [2, 4, 9, 16, 25]</span>
+
+arr.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>&#123; <span class="hljs-keyword">return</span> x * x; &#125;); <span class="hljs-comment">// [2, 4, 9, 16, 25]</span>
+
+arr.map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x * x); <span class="hljs-comment">// [2, 4, 9, 16, 25]</span></code></pre></div><h3 id="reduce-方法"><a href="#reduce-方法" class="headerlink" title="reduce 方法"></a>reduce 方法</h3><p><code>arr.reduce(function (x, y) &#123; return add(x, y); &#125;)</code> - 分别对数组的进行函数调用，依次往后累计：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+arr.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123; <span class="hljs-keyword">return</span> x + y; &#125;); <span class="hljs-comment">// 15</span>
+
+arr.reduce( <span class="hljs-function">(<span class="hljs-params">x,y</span>) =&gt;</span> x * y; ) <span class="hljs-comment">// 15</span></code></pre></div><h3 id="filter-方法"><a href="#filter-方法" class="headerlink" title="filter 方法"></a>filter 方法</h3><p><code>arr.filter(function (x) &#123; return x&gt;99 &#125;)</code> - 通过返回值决定是否保留该元素</p><h3 id="sort-方法"><a href="#sort-方法" class="headerlink" title="sort 方法"></a>sort 方法</h3><p><code>arr.sort()</code> - 默认排序按字符串 ASCII 码进行排序（eg. 10 &lt; 2）</p><p><code>arr.sort(function(x,y) &#123; if (x &lt; y) return -1; else if (x &gt; y) return 1; else return 0;&#125;)</code> - 修改排序规则则可以按照数字大小进行排序</p><p><code>sort</code> 方法直接对当前 Array 进行修改。</p><h3 id="every-方法"><a href="#every-方法" class="headerlink" title="every 方法"></a>every 方法</h3><p>判断 Array 中的每个元素是否满足条件</p><p><code>let r = arr.every(funciton (s) &#123; return s.length &gt; 0;&#125;);</code> - 判断 Array 中是否存在空元素</p><h3 id="find-findIndex-方法"><a href="#find-findIndex-方法" class="headerlink" title="find\findIndex 方法"></a>find\findIndex 方法</h3><p>查找 Array 中满足条件的第一个元素\索引</p><p><code>let s = arr.find(function (s) &#123; return s.toLowerCase() === s &#125;);</code> - 返回第一个小写的元素，如果未找到返回 <code>undefinded</code></p><h3 id="foreach-方法"><a href="#foreach-方法" class="headerlink" title="foreach 方法"></a>foreach 方法</h3><p>用于遍历 Array, 没有返回值，也不会改变原 Array, 常用于遍历</p><p><code>arr.forEach(console.log)</code></p><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>将函数作为结果返回。实现一个计数器的示例：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">counter</span> (<span class="hljs-params">initial</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> x = initial || <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) <span class="hljs-title">return</span> <span class="hljs-title">x</span> ++;</span>
+<span class="hljs-function">&#125;</span>
+<span class="hljs-function"></span>
+<span class="hljs-function"><span class="hljs-title">var</span> <span class="hljs-title">c</span> = <span class="hljs-title">conter</span>(<span class="hljs-params"><span class="hljs-number">100</span></span>);</span>
+<span class="hljs-function"><span class="hljs-title">c</span>(<span class="hljs-params"></span>); //100</span>
+<span class="hljs-function"><span class="hljs-title">c</span>(<span class="hljs-params"></span>); //101</span></code></pre></div><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><div class="hljs"><pre><code class="hljs javascript">(x, y) =&gt; x * y;</code></pre></div><p>==&gt; 等价于 ==&gt;</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;
+    <span class="hljs-keyword">return</span> x * y;
+&#125;</code></pre></div><h2 id="generator-生成器"><a href="#generator-生成器" class="headerlink" title="generator 生成器"></a>generator 生成器</h2><p>类似于在一个函数内可以返回多个结果</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">name</span>(<span class="hljs-params">max</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(index &lt; max) &#123;
+        <span class="hljs-keyword">yield</span> index++;
+    &#125;
+    <span class="hljs-keyword">return</span> index;
+&#125;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> name()) &#123;
+    <span class="hljs-built_in">console</span>.log(x);
+&#125;</code></pre></div><h2 id="标准对象"><a href="#标准对象" class="headerlink" title="标准对象"></a>标准对象</h2><p><code>number</code>, <code>string</code>, <code>boolean</code>, <code>function</code>, <code>underfined</code>, <code>object</code> - (<code>Array</code>, <code>null</code> 均属于 <code>object</code>）</p><h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><p><code>var date = new Date(2019, 6, 12);</code> - 2019/07/12</p><p>JavaScript 的 Date 对象月份值从 0 开始，牢记 0=1 月，1=2 月，2=3 月，……，11=12 月。</p><h3 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h3><h4 id="正则表达式基础"><a href="#正则表达式基础" class="headerlink" title="正则表达式基础"></a>正则表达式基础</h4><p><code>\d</code> - 数字<br><code>\w</code> - 字母或数字<br><code>\s</code> - 空格</p><p><code>.</code> - 任意字符<br><code>*</code> - 任意个字符(包括 0 个)<br><code>+</code> - 至少一个字符<br><code>?</code> - 0 或 1 个字符<br><code>&#123;n&#125;</code> - n 个字符<br><code>&#123;n, m&#125;</code> - n~m 个字符</p><p><code>[]</code> - 表示范围<br><code>[0-9a-zA-Z]</code> - 数字及字母<br><code>A|B</code> - A 或 B<br><code>^</code> - 以…开头<br><code>$</code> - 以…结尾</p><p><code>()</code> - 定义组</p><h4 id="RegExp-1"><a href="#RegExp-1" class="headerlink" title="RegExp"></a>RegExp</h4><p><code>test()</code> 方法测试字符串是否符合正则表达式</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> re = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&#x27;^\d&#123;3&#125;\-\d&#123;3-8&#125;$&#x27;</span>);
+<span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/^\d&#123;3&#125;\-\d&#123;3-8&#125;$/</span>;
+
+re.test(<span class="hljs-string">&#x27;010-12345&#x27;</span>); <span class="hljs-comment">// true</span></code></pre></div><p><code>exec()</code> 方法提取正则表达式中定义的组, 失败返回 null</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/</span>;
+re.exec(<span class="hljs-string">&#x27;010-12345&#x27;</span>); <span class="hljs-comment">// [&#x27;010-12345&#x27;, &#x27;010&#x27;, &#x27;12345&#x27;]</span>
+re.exec(<span class="hljs-string">&#x27;010 12345&#x27;</span>); <span class="hljs-comment">// null</span></code></pre></div><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/^[0-9a-zA-Z\.]+@.+\.\w+$/</span>; <span class="hljs-comment">// 匹配邮箱 v-tawe@microsoft.com</span>
+
+<span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/^\&lt;(.+)\&gt;\s+([0-9a-zA-Z\.]+@.+\.\w+)$/</span>; <span class="hljs-comment">// 匹配带名字的邮箱 &lt;David Tang&gt; v-tawe@microsoft.com</span></code></pre></div><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>序列化 - <code>JSON.parse(&#39;json&#39;)</code><br>反序列化 - <code>JSON.stringify(obj)</code></p><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>两种创建对象的方式：</p><p>通过数据类型对象创建：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> Student = &#123;
+    name: <span class="hljs-string">&#x27;Robot&#x27;</span>;
+    height: <span class="hljs-number">1.2</span>;
+    run: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name + <span class="hljs-string">&#x27;is running&#x27;</span>;
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStudent</span>(<span class="hljs-params">name</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> s = <span class="hljs-built_in">Object</span>.create(Student);
+    s.name = name;
+    <span class="hljs-keyword">return</span> s;
+&#125;
+
+<span class="hljs-keyword">var</span> xiaoming = createStudent(<span class="hljs-string">&#x27;xiaoming&#x27;</span>);
+xiaoming.run(); <span class="hljs-comment">//xiaoming is runing</span></code></pre></div><p>通过构造函数实现：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">props</span>) </span>&#123;
+    <span class="hljs-built_in">this</span>.name = props.name || <span class="hljs-string">&#x27;Robot&#x27;</span>;
+    <span class="hljs-built_in">this</span>.height  = props.height || <span class="hljs-string">&#x27;1.2&#x27;</span>;
+&#125;
+
+Student.prototype.run = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name + <span class="hljs-string">&#x27;is running&#x27;</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStudent</span>(<span class="hljs-params">props</span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Student(props || &#123;&#125;)
+&#125;</code></pre></div><p>通过 class 实现：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;
+    <span class="hljs-keyword">constructor</span>(name) &#123;
+        <span class="hljs-built_in">this</span>.name = name;
+    &#125;
+
+    run() &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name + <span class="hljs-string">&#x27;is running&#x27;</span>;
+    &#125;
+&#125;</code></pre></div><h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><p>定义新的构造函数，并在内部调用继承的构造函数的 <code>call()</code> 方法绑定<code>this</code>;</p><img src="/2019/09/16/study-notes/javascript/inherits.png" srcset="/img/loading.gif" title="inherits"><p>只有函数才有 <code>prototype</code> 属性, <code>_proto_</code> 是所有对象都有的（包括函数）, 即对象原型 <code>xxx.constructor</code>。</p><p>通过构造函数实现继承：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inherits</span>(<span class="hljs-params">Child, Father</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> F = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;;
+    F.prototype = Father.prototype;
+    Child.prototype = <span class="hljs-keyword">new</span> F();
+    Child.prototype.constructor = Child;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">props</span>) </span>&#123;
+    <span class="hljs-built_in">this</span>.name = props.name || <span class="hljs-string">&#x27;unnamed&#x27;</span>;
+    <span class="hljs-built_in">this</span>.height = props.height || <span class="hljs-number">1.2</span>;
+&#125;
+
+Student.prototype.run = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name + <span class="hljs-string">&#x27;is running&#x27;</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PrimaryStudent</span>(<span class="hljs-params">props</span>) </span>&#123;
+    Student.call(<span class="hljs-built_in">this</span>, props);
+    <span class="hljs-built_in">this</span>.grade = props.grade || <span class="hljs-number">1</span>;
+&#125;
+
+inherits(PrimaryStudent, Student);
+
+PrimaryStudent.prototype.getGrade = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.grade;
+&#125;</code></pre></div><p>通过 class 实现继承：</p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PrimaryStudent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Student</span> </span>&#123;
+    <span class="hljs-keyword">constructor</span>(props) &#123;
+        <span class="hljs-built_in">super</span>(props);
+        <span class="hljs-built_in">this</span>.grade = props.grade || <span class="hljs-number">1</span>;
+    &#125;
+
+    getGrade() &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.grade;
+    &#125;
+&#125;</code></pre></div><h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p>需要支持 ES6</p><ul><li>浏览器窗口： <code>windows</code>： <code>windows.innerWidth; windows.innerHeight</code>;</li><li>浏览器信息： <code>navigator</code>: <code>navigator.appName; navigator.appVersion</code>…;</li><li>屏幕信息： <code>screen</code>: <code>screen.width; screen.height</code>…;</li><li>当前页面 URL 信息: <code>location</code>: <code>location.protocol; location.host</code>…;</li><li>DOM 对象: <code>document</code>: <code>document.title; document.cookie</code>…;<ul><li><code>document.getElementById();</code> - 根据 ID 获取 DOM 节点</li><li><code>document.getElementsByTagName();</code> - 根据 Tag 名词获取 DOM 节点</li><li><code>document.cookie</code> - 获取 cookie 信息，服务器端使用 <code>httpOnly</code> 可以禁止 JS 读取 Cookie;</li></ul></li><li>浏览器历史： <code>history</code>: <code>history.back(); history.forward();</code> <strong>历史遗留对象已弃用！！</strong></li></ul><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><div class="hljs"><pre><code class="hljs javascript">
+<span class="hljs-keyword">var</span> d = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;id&#x27;</span>);
+<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&#x27;p&#x27;</span>);
+<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&#x27;class&#x27;</span>);
+
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;#id&#x27;</span>);
+<span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;div.class &gt; p&#x27;</span>);
+
+d.children; <span class="hljs-comment">// 获取 id 下的所有子节点</span>
+d.firstElementChild; <span class="hljs-comment">// 获取 id 下的第一个子节点</span>
+
+<span class="hljs-comment">// 更新 DOM</span>
+d.innerHTML = <span class="hljs-string">&#x27;ABC &lt;span style=&quot;color:red&quot;&gt;RED&lt;/span&gt; XYZ&#x27;</span>; <span class="hljs-comment">// 可以设置 HTML 标签</span>
+d.innerText = <span class="hljs-string">&#x27;ABC XYZ&#x27;</span>;
+
+<span class="hljs-comment">//// 设置 CSS</span>
+d.style.color = <span class="hljs-string">&#x27;#ff0000&#x27;</span>;
+d.style.fontSize = <span class="hljs-string">&#x27;20px&#x27;</span>;
+
+<span class="hljs-comment">// 插入 DOM</span>
+<span class="hljs-keyword">var</span> div1 = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;p&#x27;</span>);
+div1.id = <span class="hljs-string">&#x27;div1&#x27;</span>;
+div1.innerText = <span class="hljs-string">&#x27;DIV1&#x27;</span>;
+d.appendChild(div1);
+
+<span class="hljs-keyword">var</span> ref = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;ref&#x27;</span>);
+d.insertBefore(div1, ref);
+
+<span class="hljs-comment">// 删除 DOM</span>
+<span class="hljs-keyword">var</span> parent = d.parentElement;
+<span class="hljs-comment">// 删除节点时 children 节点实时变化</span>
+parent.removeChild(parent.children[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 删除节点 0</span>
+parent.removeChild(parent.children[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 删除节点 1</span></code></pre></div><h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p>没有 <code>name</code> 属性的表单控件不会提交。</p><p>表单控件</p><ul><li><code>&lt;input type=&#39;text&#39;&gt;&lt;/input&gt;</code></li><li><code>&lt;input type=&#39;password&#39;&gt;&lt;/input&gt;</code></li><li><code>&lt;input type=&#39;radio&#39;&gt;&lt;/input&gt;</code></li><li><code>&lt;input type=&#39;checkbox&#39;&gt;&lt;/input&gt;</code></li><li><code>&lt;input type=&#39;hidden&#39;&gt;&lt;/input&gt;</code></li><li><code>&lt;select&gt;&lt;/select&gt;&lt;/input&gt;</code></li></ul><p>获取值</p><ul><li><code>text, password, hidden, select</code> 使用 <code>value</code> 获取值</li><li><code>select</code> 使用 <code>checked</code> 获取值</li></ul><h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p><code>&lt;input type=&#39;file&#39;&gt;&lt;/input&gt;</code></p><h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><p>只支持同源策略访问，跨域需要使用 CORS 策略。</p><ol><li>创建 <code>XMLHttpRequest</code> 对象；</li><li>设置 <code>onreadystatechange</code> 回调函数；</li><li>通过 <code>readyState === 4</code> 判断请求是否完成；</li><li>根据 <code>status === 2000</code> 判断是否成功响应；</li><li>调用 <code>open()</code> 方法, 参数1： <code>GET/POST</code>; 参数2： URL 地址； 参数3：是否异步（默认 true);</li><li>调用 <code>send()</code> 方法发送请求；</li></ol><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> request = <span class="hljs-keyword">new</span> XMLHttpRequest(); <span class="hljs-comment">// 新建 AJAX 对象</span>
+
+<span class="hljs-comment">// 状态发生变化时，函数被回调</span>
+request.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">if</span> (request.readyState === <span class="hljs-number">4</span>) &#123; <span class="hljs-comment">// 成功</span>
+        <span class="hljs-comment">// 判断响应结果</span>
+        <span class="hljs-keyword">if</span> (request.status === <span class="hljs-number">200</span>) &#123;
+            <span class="hljs-comment">// 成功，responseText - 响应文本</span>
+            <span class="hljs-keyword">return</span> success(request.responseText);
+        &#125;
+        <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-comment">// 失败</span>
+            <span class="hljs-keyword">return</span> fail(request.status);
+        &#125;
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 发送请求</span>
+request.open(<span class="hljs-string">&#x27;GET&#x27;</span>, <span class="hljs-string">&#x27;/api/categories&#x27;</span>);
+request.send();</code></pre></div><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ajax</span>(<span class="hljs-params">method, url, data</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> request = <span class="hljs-keyword">new</span> XMLHttpRequest();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>&#123;
+        request.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (request.readyState === <span class="hljs-number">4</span>) &#123;
+                <span class="hljs-keyword">if</span> (request.status === <span class="hljs-number">200</span>) &#123;
+                    resolve(request.responseText);
+                &#125;
+                <span class="hljs-keyword">else</span> &#123;
+                    reject(request.status);
+                &#125;
+            &#125;
+        &#125;;
+    request.open(method, url);
+    request.send(data);
+    &#125;);
+&#125;
+
+<span class="hljs-keyword">var</span> p = ajax(<span class="hljs-string">&#x27;GET&#x27;</span>, <span class="hljs-string">&#x27;/api/categories&#x27;</span>);
+p.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>&#123;
+    log.innerText = text;
+&#125;).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>) </span>&#123;
+    log.innerText =<span class="hljs-string">&#x27;ERROR&#x27;</span> + status;
+&#125;)</code></pre></div><p>并行执行： <code>Promise.all()</code><br>容错执行： <code>Promise.race()</code></p><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>&#123;
+    ...
+&#125;)
+
+<span class="hljs-keyword">var</span> p2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>&#123;
+    ...
+&#125;)
+
+<span class="hljs-comment">// p1, p2 均执行成功后，执行 then</span>
+<span class="hljs-built_in">Promise</span>.all([p1, p2]).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">results</span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(results);
+&#125;)
+
+<span class="hljs-comment">// p1, p2 同时执行，先执行成功的返回结果给 then，后执行成功的结果丢失</span>
+<span class="hljs-built_in">Promise</span>.race([p1, p2]).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(result);
+&#125;)</code></pre></div><h2 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h2><ul><li>按 ID 查找： <code>$(&#39;#id&#39;)</code></li><li>按 class 查找： <code>$(&#39;.class&#39;)</code></li><li>按 Tag 查找： <code>$(&#39;tag&#39;)</code></li><li>按属性查找： <code>$(&#39;[name=email]&#39;)</code>; <code>$(&#39;[type=password]&#39;)</code><ul><li><code>$(&#39;[name^=icon])</code>: 查找 name 属性以 icon 开头的 DOM;</li><li><code>$(&#39;[name$=with]&#39;)</code>: 查找 name 属性以 with 结尾的 DOM;</li></ul></li><li>组合查找： <code>$(&#39;input[name=email]&#39;)</code>; <code>$(&#39;tr.red&#39;)</code></li><li>多项选择器： <code>$(&#39;p, div&#39;)</code>; <code>$(&#39;p.red, p.green&#39;)</code>; <code>$(&#39;input[name=email],[name=password]&#39;)</code></li></ul><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul><li><p>层级选择器 用 空格 隔开： <code>$(&#39;ul li.class&#39;)</code></p></li><li><p>子选择器 用 &gt; 隔开： <code>$(&#39;ul &gt; li.class&#39;)</code></p><p>层级选择器 和 子选择器的区别在： 子选择器必须时父子关系，不可跨层级选择！</p></li><li><p>过滤器 用 : 隔开： <code>$(&#39;ul li:first-child&#39;)</code>; <code>$(&#39;ul li:last-child&#39;)</code>; <code>$(&#39;ul li:nth-child(2)&#39;)</code>; <code>$(&#39;ul li:nth-child(even)&#39;)</code></p></li></ul><h3 id="表单相关"><a href="#表单相关" class="headerlink" title="表单相关"></a>表单相关</h3><ul><li><code>:input</code> - <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code></li><li><code>:file</code> - <code>input[type=file]</code></li><li><code>:checkbox</code> - <code>input[type=checkbox]</code></li><li><code>:radio</code> - <code>input[type=radio]</code></li><li><code>:focus</code> - 获取鼠标当前的焦点控件 <code>input:focus</code></li><li><code>:checked</code> - 已选择的单选或复选框控件 <code>input[type=radio]:checked</code></li><li><code>:enabled</code> - 可以正常输入的控件</li><li><code>:disabled</code> - 已被禁用的控件</li><li><code>:visible</code> - 可见的控件</li><li><code>:hidden</code> - 隐藏的控件</li><li>… …</li></ul><h3 id="查找-amp-过滤"><a href="#查找-amp-过滤" class="headerlink" title="查找 &amp; 过滤"></a>查找 &amp; 过滤</h3><ul><li><p><code>find()</code> - 在所有子节点中进行查找</p></li><li><p><code>parent()</code> - 从当前节点向上查找</p></li><li><p><code>next()</code> &amp; <code>prev()</code> - 同一层级节点前后进行查找</p></li><li><p><code>filter()</code> - 过滤掉不符合条件的节点</p></li><li><p><code>map()</code> - 把一个 jQuery 对象包含的若干 DOM 节点转化为其他对象</p></li><li><p><code>first()</code> &amp; <code>last()</code> &amp; <code>slice(2, 4)</code> - 截取 jQuery 对象</p></li></ul><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul><li><p><code>text()</code> &amp; <code>html()</code> - 获取或修改 text 或 html</p></li><li><p><code>val()</code> - 获取或修改 value 属性</p></li><li><p><code>css()</code> - 获取或修改 css</p></li><li><p><code>hide()</code> &amp; <code>show()</code> - 隐藏或显示元素; 增加参数可以实现淡入淡出效果： <code>hide(&#39;slow&#39;)</code> / <code>show(&#39;slow&#39;)</code></p></li><li><p><code>attr()</code> &amp; <code>removeAttr()</code> - 修改 DOM 属性</p></li><li><p><code>prop()</code> - 与 attr() 类似</p></li><li><p><code>append()</code> &amp; <code>prepend()</code> - 添加 DOM 节点</p></li><li><p><code>before()</code> &amp; <code>after()</code> - 在当前元素前/后插入 DOM 节点</p></li><li><p><code>remove()</code> - 删除节点</p></li></ul><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>绑定事件：</p><ul><li><code>$(&#39;#id&#39;).on(&#39;click&#39;, function() &#123; alert(&#39;Hello, World&#39;); &#125;);</code></li><li><code>$(&#39;#id&#39;).click(function() &#123; alert(&#39;Hello, World&#39;); &#125;);</code></li></ul><p>事件类型：</p><ul><li><p><code>click</code> - 单击</p></li><li><p><code>dblclick</code> - 双击</p></li><li><p><code>mouseenter</code> - 鼠标移入</p></li><li><p><code>mouseleave</code> - 鼠标移除</p></li><li><p><code>mousemove</code> - 鼠标在 DOM 内移动</p></li><li><p><code>hover</code> - <code>mouseenter</code> + <code>mouseleave</code></p></li><li><p><code>keydown</code> - 键盘按下</p></li><li><p><code>keyup</code> - 键盘松开</p></li><li><p><code>keypress</code> - 按一次键触发</p></li><li><p><code>focus</code> - DOM 获得焦点</p></li><li><p><code>blur</code> - DOM 失去焦点</p></li><li><p><code>change</code> - DOM 内容变更</p></li><li><p><code>submit</code> - form 提交</p></li><li><p><code>ready</code> - 页面载入并且 DOM 树初始化后 仅作用于 document 对象</p><p><code>$(document).ready(function() &#123;...&#125;);</code><br>简化后：<br><code>$(function() &#123;...&#125;);</code></p></li><li><p><code>off(&#39;click&#39;, &lt;functionName&gt;)</code> 取消事件绑定</p></li></ul><h3 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h3><ul><li><p><code>show(&#39;slow&#39;) / hide(&#39;slow&#39;) / toogle(&#39;slow&#39;)</code> - 左上角缓慢收缩</p></li><li><p><code>slideUp(&#39;slow&#39;) / SlideDown(&#39;slow&#39;) / slideToogle(&#39;slow&#39;)</code> - 垂直缓慢收缩</p></li><li><p><code>fadeIn(&#39;slow&#39;) / fadeOut(&#39;slow&#39;) / fadeToggle(&#39;slow&#39;)</code> - 淡入淡出</p></li><li><p><code>animate()</code> - 自定义效果</p><div class="hljs"><pre><code class="hljs javascript">$(<span class="hljs-string">&#x27;#id&#x27;</span>).animate(&#123;
+  opacity: <span class="hljs-number">0.25</span>,
+  width: <span class="hljs-number">0</span>px;
+  height: <span class="hljs-number">0</span>px;
+&#125;, <span class="hljs-number">1000</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Complete&#x27;</span>); &#125;).delay(<span class="hljs-number">1000</span>).animate(...);</code></pre></div><p>可以使用 <code>delay()</code> 实现动画的暂停。</p></li></ul><h3 id="AJAX-1"><a href="#AJAX-1" class="headerlink" title="AJAX"></a>AJAX</h3><ul><li><p><code>$.ajax(async, method, contentType, data, headers, dataType)</code></p></li><li><p><code>$.ajax(async, method, contentType, data, headers, dataType, jsonp:&#39;callback&#39;, jsonpCallback:&#39;callbackFunction&#39;, success: function(data)&#123;...&#125;)</code></p></li><li><p><code>$.get(url)</code></p></li><li><p><code>$.post(url, data)</code></p></li><li><p><code>$.getJSON(url)</code></p></li></ul><h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><ol><li>使用 <code>$.fn</code> 绑定函数</li><li>使用 <code>return this</code> 实现链式调用</li><li>插件有默认值，绑定在 <code>$.fn.&lt;pluginName&gt;.defaults</code> 上</li><li>用户在调用时可传入参数以覆盖默认值</li></ol><div class="hljs"><pre><code class="hljs javascript">$.fn.&lt;pluginName&gt; = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">options</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> bgcolor = options &amp;&amp; options.bgcolor || <span class="hljs-string">&#x27;#FFFFFF&#x27;</span>;
+    <span class="hljs-built_in">this</span>.css(<span class="hljs-string">&#x27;background&#x27;</span>, bgcolor)
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+&#125;</code></pre></div><p><code>extend(target, obj1, obj2, ...)</code> 会将靠后对象的值合并到第一个 target 中, 越往后面的对象优先级越高；</p><p><code>extend(&#123;&#125;, $.fn.&lt;pluginName&gt;.defaults, options)</code></p><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>使用 <code>try &#123;...&#125; catch &#123;...&#125; finally &#123;...&#125;</code> 捕获</p><blockquote><p>注意：异步操作时的异常无法在调用处捕获，同样，对于控件的事件处理，在绑定事件的代码处无法捕获事件处理函数的异常。</p></blockquote><h2 id="unerscore"><a href="#unerscore" class="headerlink" title="unerscore"></a>unerscore</h2><p>与 jQuery 类似，提供一套完善的 API, 绑定到 <code>_</code> 变量上。</p><h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><h4 id="map-filter"><a href="#map-filter" class="headerlink" title="map/filter"></a>map/filter</h4><p>类似于 Array 的 <code>map/filter</code> 方法</p><ul><li><code>_.map(object, function(value, key) &#123;...&#125;);</code></li><li><code>_.mapObject(object, function(value, key) &#123;...&#125;);</code></li><li><code>_.filter(object, function(value, key) &#123;...&#125;);</code></li></ul><h4 id="every-some"><a href="#every-some" class="headerlink" title="every/some"></a>every/some</h4><p>集合中元素都满足情况，<code>_.every()</code> 返回 <code>true</code>, 集合中部分元素满足情况， <code>_.some()</code> 返回 <code>true</code></p><ul><li><code>_.every([1, 4, 7, -3, -9], (x) =&gt; x &gt; 0); // false</code></li><li><code>_.some([1, 4, 7, -3, -9], (x) =&gt; x &gt; 0); // true</code></li></ul><h4 id="max-min"><a href="#max-min" class="headerlink" title="max/min"></a>max/min</h4><p>集合时 Object，会忽略掉 key，只比较 value</p><p><code>_.max(&#123; a: 1, b: 2, c: 3 &#125;); // 3</code></p><h4 id="groupBy"><a href="#groupBy" class="headerlink" title="groupBy"></a>groupBy</h4><p><code>_.groupBy([1, 2, 3, 4, 5], (x) =&gt; &#123; if(x&lt;3) return &#39;small&#39;; else return &#39;big&#39; &#125;);</code></p><p>更多 <a target="_blank" rel="noopener" href="https://underscorejs.org/">underscrore 方法</a>。</p></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/Study-Notes/">Study Notes</a> <a class="hover-with-bg" href="/categories/Study-Notes/JavaScript/">JavaScript</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"><a href="/2019/09/17/study-notes/sql/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">SQL 学习笔记</span> <span class="visible-mobile">上一篇</span></a></div><div class="post-next col-6"><a href="/2019/09/16/study-notes/git/"><span class="hidden-mobile">Git 学习笔记</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"><div id="vcomments"></div><script type="text/javascript">function loadValine(){addScript("https://cdn.staticfile.org/valine/1.4.14/Valine.min.js",function(){new Valine({el:"#vcomments",app_id:"B8fePpme8GqHbaX60J1Lx85r-gzGzoHsz",app_key:"OIG9LorCmRisUPKF5LITpCvo",placeholder:"说点什么...",path:window.location.pathname,avatar:"retro",meta:["nick","mail","link"],pageSize:"10",lang:"zh-CN",highlight:!0,recordIP:!0,serverURLs:""})})}createObserver(loadValine,"vcomments")</script><noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a></noscript></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px;height:150px"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("09/01/2019 00:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站安全运行&nbsp"+dnum+"&nbsp天",document.getElementById("times").innerHTML=hnum+"&nbsp小时&nbsp"+mnum+"&nbsp分&nbsp"+snum+"&nbsp秒"}setInterval("createtime()",250)</script></div></div></div></footer><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/debouncer.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"article.markdown-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>function typing(t,n){var p=new Typed("#"+t,{strings:["  ",n+"&nbsp;"],cursorChar:"_",typeSpeed:50,loop:!1});p.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),p.start()})}typing("subtitle","JavaScript 学习笔记")</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script type="text/javascript">var a_idx=0;jQuery(document).ready(function(d){d("body").click(function(a){var o=new Array("富强","民主","文明","和谐","自由","平等","公正","法治","爱国","敬业","诚信","友善"),t=d("<span/>").text(o[a_idx]);a_idx=(a_idx+1)%o.length;var n=a.pageX,e=a.pageY;t.css({"z-index":999,top:e-20,left:n,position:"absolute","font-weight":"bold",color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),d("body").append(t),t.animate({top:e-180,opacity:0},1500,function(){t.remove()})})})</script></body></html>

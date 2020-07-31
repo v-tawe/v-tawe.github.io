@@ -1,0 +1,1 @@
+"use strict";var fs=require("fs");fs.stat("./sample.txt",function(s,e){s?console.log(s):console.log(e.isFile())});
